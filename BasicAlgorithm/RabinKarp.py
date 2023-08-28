@@ -19,3 +19,8 @@ def rabin_karp_search(text, pattern):
             window_hash = hash(text[i + 1:i + m + 1])
 
     return indices
+
+text = "This is a test text guanxinyu is a good person"
+pattern = "i"
+rabin_karp_indices = rabin_karp_search(text, pattern)
+print("Rabin-Karp Search indices:", rabin_karp_indices)

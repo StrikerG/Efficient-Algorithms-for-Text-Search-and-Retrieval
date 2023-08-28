@@ -51,7 +51,7 @@ def kmp_search(text, pattern):
 
     return indices
 
-# text = "This is a test text"
-# pattern = "t"
-# kmp_indices = kmp_search(text, pattern)
-# print("KMP indices:", kmp_indices)
+text = "This is a test text guanxinyu is a good person"
+pattern = "i"
+kmp_indices = kmp_search(text, pattern)
+print("KMP indices:", kmp_indices)

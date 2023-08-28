@@ -20,7 +20,6 @@ def build_good_suffix_table(pattern):
             while j >= 0 and pattern[j] == pattern[j + length - 1 - suffix]:
                 j -= 1
             table[i] = suffix - j
-
     return table
 
 
@@ -56,7 +55,7 @@ def boyer_moore(text, pattern):
 
 
 # 示例用法
-# text = "This is a test text"
-# pattern = "i"
-# bm_indices = boyer_moore(text, pattern)
-# print("Boyer-Moore indices:", bm_indices)
+text = "mississippi"
+pattern = "i"
+bm_indices = boyer_moore(text, pattern)
+print("Boyer-Moore indices:", bm_indices)

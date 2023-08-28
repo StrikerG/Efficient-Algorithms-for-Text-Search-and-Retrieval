@@ -3,34 +3,19 @@ from BasicAlgorithm.bm import boyer_moore
 # from BasicAlgorithm.suffix_tries import SuffixTree
 from BasicAlgorithm.Naive_algorithm import naive_search
 from BasicAlgorithm.RabinKarp import rabin_karp_search
-#第一种生成文本字符串的方法
-import nltk
 import time
 import random
 
 if __name__ == '__main__':
-    # # 生成10个长度为5的随机字符串
-    # dataset = [generate_random_string(5) for _ in range(10)]
-    # print(dataset)
+    with open('text_source_data/human_gene_sequence.txt', 'r') as file:
+        raw_text = file.read()
 
-    # 获取reuters语料库的英文文本数据
-    nltk.download('reuters')
-    corpus = nltk.corpus.reuters
-    raw_text = corpus.raw()[0:100000]
-    # print(raw_text)
-    # 获取前10个文件的文本内容
-    # dataset = [corpus.raw(fileid) for fileid in corpus.fileids()[:10]]
+    min_length = 1
+    max_length = 10
+    pattern_length = random.randint(min_length, max_length)
 
-    #随机生成模式匹配字符串
-
-    # 生成随机长度的pattern
-    min_length = 1  # 最小长度
-    max_length = 10  # 最大长度
-    pattern_length = random.randint(min_length, max_length)  # 随机生成长度
-
-    # 从raw_text中随机截取pattern_length长度的子字符串作为pattern
-    start_index = random.randint(0, len(raw_text) - pattern_length)  # 随机生成起始索引
-    pattern = raw_text[start_index: start_index + pattern_length]  # 截取子字符串
+    start_index = random.randint(0, len(raw_text) - pattern_length)
+    pattern = raw_text[start_index: start_index + pattern_length]
 
     print("Random pattern:", pattern)
 
@@ -90,4 +75,17 @@ if __name__ == '__main__':
     print("Execution time: {:.6f} seconds".format(execution_time_bm))
     print("————————————————————————")
 
-
+    # start_time_suffix_tree = time.time()
+    # suffix_tree = SuffixTree()
+    # suffix_tree.build_tree(raw_text)
+    # indices_suffix_tree = suffix_tree.search_text(pattern)
+    # end_time_suffix_tree = time.time()
+    # execution_time_suffix_tree = end_time_suffix_tree - start_time_suffix_tree
+    #
+    # print("Suffix Tree Algorithm:")
+    # if indices_suffix_tree:
+    #     print("Pattern found at indices:", indices_suffix_tree)
+    # else:
+    #     print("Pattern not found")
+    # print("Execution time: {:.6f} seconds".format(execution_time_suffix_tree))
+    # print("————————————————————————")
