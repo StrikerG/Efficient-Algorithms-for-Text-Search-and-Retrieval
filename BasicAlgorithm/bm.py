@@ -55,7 +55,7 @@ def boyer_moore(text, pattern):
 
 
 # 示例用法
-text = "mississippi"
+text = "This is a test text guanxinyu is a good person"
 pattern = "i"
 bm_indices = boyer_moore(text, pattern)
 print("Boyer-Moore indices:", bm_indices)

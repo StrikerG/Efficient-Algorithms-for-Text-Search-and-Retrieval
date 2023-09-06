@@ -17,8 +17,8 @@ if __name__ == '__main__':
 
     # 定义数据集大小范围
     min_dataset_size = 100
-    max_dataset_size = 2000
-    step_size = 100
+    max_dataset_size = 200
+    step_size = 20
 
 
 
@@ -96,7 +96,7 @@ if __name__ == '__main__':
         pattern_lengths.append(dataset_size)
 
     # 绘制图表
-    plt.plot(pattern_lengths, execution_times_naive, label="Naïve")
+    # plt.plot(pattern_lengths, execution_times_naive, label="Naïve")
     plt.plot(pattern_lengths, execution_times_kmp, label="KMP")
     plt.plot(pattern_lengths, execution_times_rk, label="Rabin-Karp")
     plt.plot(pattern_lengths, execution_times_bm, label="Boyer-Moore")

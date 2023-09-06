@@ -65,8 +65,8 @@ class SuffixTries:
 # 示例用法
 if __name__ == '__main__':
     suffix_tries = SuffixTries()
-    text = "guanxinyu"
-    pattern = "u"
+    text = "mississippi$"
+    pattern = "i"
     suffix_tries.build_tree(text)
     result = suffix_tries.search_text(pattern)
     if result:
